@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  /* Default font: SF Pro Light (system) with Roboto fallback */
+  --font-sans: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+  /* Surfaces */
+  --color-bg: #f1f1f1;
+  --color-bg-dark: #242529;
+  /* Primary */
+  --color-purple: #d9d0ff;
+  --color-purple-light: #eae6fa;
+  /* Accents */
+  --color-pink: #fface6;
+  --color-pink-light: #ffe6f7;
+  --color-yellow: #faca40;
+  --color-yellow-light: #fff4cf;
+  --color-blue: #7fe4f6;
+  --color-blue-light: #d5f3fa;
+  /* Semantic (status) */
+  --color-owned: var(--color-purple);
+  --color-planned: var(--color-pink);
+  --color-wishlist: var(--color-yellow);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-bg);
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.bg-dot-grid {
+  background-color: var(--color-purple-light);
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.08) 1px, transparent 0);
+  background-size: 16px 16px;
+}
