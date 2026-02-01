@@ -49,14 +49,15 @@ export default function Designer() {
   return (
     <div className="min-h-screen bg-bg pb-24">
       <div className="flex flex-col gap-6 p-4 md:p-6">
-        <DesignerViewSwitcher
-          viewType={viewType}
-          earLayout={earLayout}
-          onViewTypeChange={setViewType}
-          onEarLayoutChange={setEarLayout}
-        />
-
-        <section className="flex justify-center">
+        <section className="relative flex justify-center">
+          <div className="absolute left-4 top-4 z-10 md:left-6 md:top-6">
+            <DesignerViewSwitcher
+              viewType={viewType}
+              earLayout={earLayout}
+              onViewTypeChange={setViewType}
+              onEarLayoutChange={setEarLayout}
+            />
+          </div>
           <DesignerCanvas
             viewType={viewType}
             earLayout={earLayout}

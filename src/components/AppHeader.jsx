@@ -10,8 +10,8 @@ const ROUTE_TITLES = {
 
 function getPageTitle(pathname) {
   if (ROUTE_TITLES[pathname] !== undefined) return ROUTE_TITLES[pathname]
-  if (pathname.startsWith('/designer')) return 'Designer'
-  if (pathname.startsWith('/wishlist')) return 'Wishlist'
+  if (pathname.startsWith(BASE_PATH +'/designer')) return 'Designer'
+  if (pathname.startsWith(BASE_PATH + '/wishlist')) return 'Wishlist'
   return null
 }
 
