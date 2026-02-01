@@ -2,13 +2,11 @@ import { PIERCING_STATUS } from '../constants'
 
 const statusLabels = {
   [PIERCING_STATUS.OWNED]: 'Owned',
-  [PIERCING_STATUS.PLANNED]: 'Planned',
   [PIERCING_STATUS.WISHLIST]: 'Wishlist'
 }
 
 const statusBadgeClass = {
   [PIERCING_STATUS.OWNED]: 'bg-purple text-bg-dark',
-  [PIERCING_STATUS.PLANNED]: 'bg-pink text-bg-dark',
   [PIERCING_STATUS.WISHLIST]: 'bg-yellow text-bg-dark'
 }
 

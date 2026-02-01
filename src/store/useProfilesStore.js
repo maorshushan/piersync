@@ -75,11 +75,24 @@ export function useProfilesStore() {
     })
   }, [])
 
-  const addPiercing = useCallback(({ x, y, status = 'wishlist', label = '' }) => {
+  const addPiercing = useCallback((payload) => {
     const id = `p-${generateId()}`
+    const piercing = {
+      id,
+      status: payload.status ?? 'wishlist',
+      label: payload.label ?? '',
+      type: payload.type ?? 'custom',
+      style: payload.style ?? 'stud',
+      x: payload.x ?? 0,
+      y: payload.y ?? 0,
+      rotation: payload.rotation ?? 0,
+      size: payload.size ?? 3,
+      fixed: payload.fixed ?? false,
+      ear: payload.ear ?? 'left'
+    }
     updateActiveProfile((p) => ({
       ...p,
-      piercings: [...p.piercings, { id, x, y, status, label }]
+      piercings: [...p.piercings, piercing]
     }))
     return id
   }, [updateActiveProfile])
@@ -99,7 +112,7 @@ export function useProfilesStore() {
   }, [updateActiveProfile])
 
   const cycleStatus = useCallback((id) => {
-    const order = ['owned', 'planned', 'wishlist']
+    const order = ['owned', 'wishlist']
     updateActiveProfile((p) => ({
       ...p,
       piercings: p.piercings.map((pi) => {

@@ -1,6 +1,5 @@
 export const PIERCING_STATUS = {
   OWNED: 'owned',
-  PLANNED: 'planned',
   WISHLIST: 'wishlist'
 }
 

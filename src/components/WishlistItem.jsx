@@ -1,6 +1,5 @@
 const dotColors = {
   owned: 'bg-purple',
-  planned: 'bg-pink',
   wishlist: 'bg-yellow'
 }
 

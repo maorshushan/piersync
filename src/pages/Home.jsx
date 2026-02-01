@@ -7,7 +7,7 @@ import { PIERCING_STATUS } from '../constants'
 
 export default function Home() {
   const { piercings, cycleStatus } = useProfilesStore()
-  const plannedCount = piercings.filter((p) => p.status === PIERCING_STATUS.PLANNED).length
+  const plannedCount = piercings.filter((p) => p.status === PIERCING_STATUS.WISHLIST).length
 
   return (
     <div className="min-h-screen bg-bg pb-24">
