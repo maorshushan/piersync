@@ -4,8 +4,7 @@ import Designer from './pages/Designer'
 import WishlistPage from './pages/WishlistPage'
 import AppHeader from './components/AppHeader'
 import BottomNav from './components/BottomNav'
-
-const BASE_PATH = '/piersync';
+import { BASE_PATH } from './constants'
 
 function App() {
   return (

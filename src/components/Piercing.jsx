@@ -2,7 +2,6 @@ import { PIERCING_STATUS } from '../constants'
 
 const statusStyles = {
   [PIERCING_STATUS.OWNED]: 'fill-purple stroke-bg-dark/20 stroke-2 opacity-100',
-  [PIERCING_STATUS.PLANNED]: 'fill-pink stroke-bg-dark/20 stroke-2 opacity-90',
   [PIERCING_STATUS.WISHLIST]: 'fill-yellow stroke-bg-dark/20 stroke-1 opacity-80'
 }
 

@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import logo from '../assets/logo.svg'
+import { BASE_PATH } from '../constants'
 
 const ROUTE_TITLES = {
   '/': null,
@@ -21,7 +22,7 @@ export default function AppHeader() {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between gap-4 bg-bg/95 px-4 py-3 backdrop-blur">
       <div className="flex min-w-0 flex-1 items-end gap-2">
-        <Link to="/" className="shrink-0" aria-label="Piersync home">
+        <Link to={ BASE_PATH + "/"} className="shrink-0" aria-label="Piersync home">
           <img src={logo} alt="Piersync" className="h-8 w-auto" />
         </Link>
         {title && (

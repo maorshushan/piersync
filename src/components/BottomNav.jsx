@@ -1,22 +1,23 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { Home, PencilRuler, List, Bolt } from 'lucide-react'
+import { BASE_PATH } from '../constants'
 
 const navItems = [
-  { to: '/', icon: Home, label: 'Home' },
-  { to: '/designer', icon: PencilRuler, label: 'Designer' },
-  { to: '/wishlist', icon: List, label: 'Wishlist' },
-  { to: '/settings', icon: Bolt, label: 'Settings' }
+  { to: BASE_PATH + '/', icon: Home, label: 'Home' },
+  { to: BASE_PATH + '/designer', icon: PencilRuler, label: 'Designer' },
+  { to: BASE_PATH + '/wishlist', icon: List, label: 'Wishlist' },
+  { to: BASE_PATH + '/settings', icon: Bolt, label: 'Settings' }
 ]
 
 function isActivePath(pathname, to, end) {
-  if (to === '/') return pathname === '/'
+  if (to === BASE_PATH + '/') return pathname === BASE_PATH + '/'
   return pathname.startsWith(to)
 }
 
 export default function BottomNav() {
   const { pathname } = useLocation()
   const activeIndex = navItems.findIndex(({ to }) =>
-    to === '/' ? pathname === '/' : pathname.startsWith(to)
+    to === BASE_PATH + '/' ? pathname === BASE_PATH + '/' : pathname.startsWith(to)
   )
   const safeIndex = activeIndex >= 0 ? activeIndex : 0
 
@@ -27,12 +28,12 @@ export default function BottomNav() {
     >
       <div className="relative mx-auto flex max-w-lg items-end">
         {navItems.map(({ to, icon: Icon, label }) => {
-          const isActive = isActivePath(pathname, to, to === '/')
+          const isActive = isActivePath(pathname, to, to === BASE_PATH + '/')
           return (
             <NavLink
               key={to}
               to={to}
-              end={to === '/'}
+              end={to === BASE_PATH + '/'}
               className={`flex flex-1 flex-col items-center gap-1 rounded-lg py-1 transition ${
                 isActive ? 'text-bg-dark' : 'text-neutral-500 hover:text-bg-dark'
               }`}

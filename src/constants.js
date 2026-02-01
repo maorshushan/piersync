@@ -5,6 +5,8 @@ export const PIERCING_STATUS = {
 
 export const STORAGE_KEY = 'piersync-data'
 
+export const BASE_PATH = '/piersync'
+
 /** ViewBox for ear SVG — use same units for piercing x/y (0–100, 0–120) */
 export const EAR_VIEWBOX = { width: 100, height: 120 }
 
